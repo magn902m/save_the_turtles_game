@@ -1,0 +1,801 @@
+@font-face {
+    font-family: 'adventure_time_logoregular';
+    src: url('fonts/adventure_time_logo-webfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0.5rem;
+}
+
+body {
+    margin: 0;
+    /*cursor: url(assets/mus_16x16.svg), auto;*/
+    background-color: #96c0bf;
+}
+
+/*#game_elements,
+#game_ui:hover {
+    cursor: url(assets/haand_16x16.svg), auto;
+}*/
+
+/* Menu start */
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.625rem;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    padding: 0.1rem 1rem;
+    margin: 0;
+    gap: 1.25rem;
+    /*background-color: #cc8450;*/
+    /*background: linear-gradient(0deg, rgba(14, 21, 43, 0) 0%, rgba(204, 132, 80, 1) 40%);*/
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(125, 129, 181, 1) 60%);
+}
+
+h1 {
+    text-shadow: 0.325rem 0.325rem 0.3125rem #000;
+}
+
+h1 a {
+    text-decoration: none;
+    font-family: 'adventure_time_logoregular', chennai-slab, serif;
+    color: #41803e;
+    text-transform: uppercase;
+    font-size: 3rem;
+    margin: 0.5rem;
+}
+
+a:hover {
+    color: #54a651;
+    color: #ed1c24;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: flex-start;
+    list-style: none;
+    font-family: sans-serif;
+    padding: 0.5rem;
+    overflow-x: auto;
+    gap: 0.8rem;
+}
+
+header nav ul li {
+    border-radius: 0.3125rem;
+    /*border: 0.125rem solid #000;*/
+    box-shadow: 0.325rem 0.325rem 0.3125rem #000;
+    background: #b0a663;
+    padding: 0.125rem 0.3125rem 0.125rem 0.3125rem;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    font-family: chennai-slab, serif;
+    color: #000;
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+
+
+/* Menu end */
+
+/* Main start */
+
+main {
+    /*background: linear-gradient(0deg, rgba(125, 129, 181, 1) 6%, rgba(204, 132, 80, 1) 14%, rgba(84, 166, 81, 1) 38%, rgba(84, 166, 81, 1) 76%, rgba(150, 192, 191, 1) 93%);*/
+}
+
+
+/* Main end */
+
+/* Footer start */
+
+footer {
+    padding: 1rem;
+    margin: 0;
+    /*background-color: #cc8450;*/
+    /*background: linear-gradient(0deg, rgba(204, 132, 80, 1) 35%, rgba(0, 0, 0, 0) 100%);*/
+    /*background: linear-gradient(0deg, rgb(204, 132, 80) 5%, rgb(125, 129, 181) 46%);*/
+    background: linear-gradient(0deg, rgba(125, 129, 181, 1) 30%, rgba(150, 192, 191, 0) 80%);
+}
+
+/* Footer end */
+
+/****************** Spillet ******************/
+/* screen and game start */
+
+#screen {
+    /*    Hvis jeg vil ændre størrelsen på mit spil kan jeg ædndre width og height til fx height: 90vw; og width: 50.625;, margin: 0 auto; kan også bruger, dog virker auto ikke i Safari i nu*/
+    width: 100vw;
+    height: 56.25vw;
+    /*background-color: aqua;*/
+    position: relative;
+    overflow: hidden;
+    border: black;
+    border-style: solid;
+}
+
+
+#game {
+    background-color: pink;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#game_background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url(assets/game_background.svg);
+    background-size: cover;
+}
+
+/* game_elements start */
+#game_elements {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /*background-color: rgba(255, 255, 0, 0.3);*/
+}
+
+#infoscreen {
+    width: 80.1%;
+    height: 80.7%;
+    position: absolute;
+    top: 5vw;
+    left: 10vw;
+    background-image: url(assets/infoScreenV2.svg);
+    background-size: cover;
+}
+
+#luk_knap {
+    width: 10%;
+    height: 18%;
+    position: absolute;
+    top: 1.3vw;
+    left: 70vw;
+    background-image: url(assets/luk_knap.svg);
+    background-size: cover;
+    cursor: pointer;
+}
+
+#points_board {
+    width: 23%;
+    height: 9%;
+    position: absolute;
+    top: 49vw;
+    left: 77vw;
+    background-image: url(assets/got_points.svg);
+    background-size: cover;
+}
+
+
+#game_over_points,
+#level_complete_points {
+    position: absolute;
+    font-family: chennai-slab, serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 2vw;
+    top: 1vw;
+    left: 4.5vw;
+    color: black;
+}
+
+/* bange_skildpadde_blur1 start */
+#skildpadde_container1,
+#skildpadde_container2,
+#skildpadde_container3,
+#skildpadde_container4 {
+    position: absolute;
+    top: -9vw;
+    /*top: 9vw;*/
+    /*left: 16vw;*/
+    cursor: pointer;
+}
+
+#skildpadde_sprite1,
+#skildpadde_sprite2,
+#skildpadde_sprite3,
+#skildpadde_sprite4 {
+    width: 10.529vw;
+    height: 9vw;
+    background-image: url(assets/bange_skildpadde_blur.svg);
+    background-size: cover;
+}
+
+/* bange_skildpadde_blur1 end */
+/* farlig_odder_blur1 start */
+#odder_container1,
+#odder_container2,
+#odder_container3,
+#odder_container4 {
+    position: absolute;
+    top: -8vw;
+    /*top: 18vw;*/
+    /*left: 53vw;*/
+    cursor: pointer;
+}
+
+#odder_sprite1,
+#odder_sprite2,
+#odder_sprite3,
+#odder_sprite4 {
+    width: 16.174vw;
+    height: 8vw;
+    background-image: url(assets/farlig_odder_blur.svg);
+    background-size: cover;
+}
+
+/* farlig_odder_blur1 end */
+/* egg_blur start */
+#egg_container1,
+#egg_container2 {
+    position: absolute;
+    /*top: 25vw;*/
+    /*left: 25vw;*/
+    cursor: pointer;
+}
+
+#egg_sprite1,
+#egg_sprite2 {
+    width: 3.125vw;
+    height: 5vw;
+    background-image: url(assets/egg_blur.svg);
+    background-size: cover;
+}
+
+/* egg_blur1 end */
+
+/* game_elements end */
+
+/* forgrund start */
+#foreground {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /*background-image: url(assets/forgrund.svg);*/
+    background-size: cover;
+    pointer-events: none;
+}
+
+/* forgrund end */
+
+/* game_ui start */
+#game_ui {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+/* Knapper start */
+/* start_knap start */
+#start_container1 {
+    position: absolute;
+    top: 31vw;
+    left: 9vw;
+    cursor: pointer;
+}
+
+#start_sprite1 {
+    width: 66.67vw;
+    height: 22vw;
+    background-image: url(assets/start_knap.svg);
+    background-size: cover;
+}
+
+/* start_knap end */
+
+/* spil_igen_knap start */
+#genstart_container1,
+#genstart_container2 {
+    position: absolute;
+    top: 31vw;
+    left: 9vw;
+    cursor: pointer;
+}
+
+#genstart_sprite1,
+#genstart_sprite2 {
+    width: 66.67vw;
+    height: 22vw;
+    background-image: url(assets/spil_igen_knap.svg);
+    background-size: cover;
+}
+
+/* spil_igen_knap end */
+
+/* indstiller_knap start */
+#button_settings_container {
+    position: absolute;
+    top: 2vw;
+    left: 2vw;
+    /*cursor: pointer;*/
+}
+
+#button_settings_sprite {
+    width: 8vw;
+    height: 8vw;
+    background-image: url(assets/indstiller_knap.svg);
+    background-size: cover;
+}
+
+/* indstiller_knap end */
+/* Knapper end */
+
+/* score_board start */
+#score_board_container {
+    position: absolute;
+    top: 15.7vw;
+    left: 76.9vw;
+}
+
+#score_board_sprite {
+    width: 12.19vw;
+    height: 20vw;
+    background-image: url(assets/points_baad.svg);
+    background-size: cover;
+}
+
+#score_board_points {
+    position: absolute;
+    font-family: chennai-slab, serif;
+    font-size: 4vw;
+    top: 7vw;
+    left: 4.4vw;
+}
+
+/* score_board end */
+
+/* energy_board start */
+#energy_board_container {
+    position: absolute;
+    top: 8.3vw;
+    left: 89.8vw;
+}
+
+#energy_board_sprite {
+    width: 8.33vw;
+    height: 20vw;
+    background-image: url(assets/liv_baad.svg);
+    background-size: cover;
+}
+
+
+/* liv start */
+#liv {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 4.3vw;
+    left: 2.7vw;
+}
+
+#liv1,
+#liv2,
+#liv3,
+#liv4 {
+    width: 3vw;
+    height: 3vw;
+    margin: 0rem;
+}
+
+.gray {
+    filter: grayscale(80%);
+}
+
+/* liv end */
+/* energy_board end */
+
+/* time_board start */
+#time_board_container {
+    position: absolute;
+    top: 29.9vw;
+    left: 86.8vw;
+}
+
+#time_board_sprite {
+    width: 9.69vw;
+    height: 20vw;
+    background-image: url(assets/baad_timer.svg);
+    background-size: cover;
+}
+
+/* egg_time1 start */
+/* Simpel timer start
+#egg_time1_container {
+    position: absolute;
+    background-image: url(assets/egg_timer_bg.svg);
+    background-size: cover;
+    top: 5vw;
+    left: 2vw;
+}
+
+#egg_time1_sprite {
+    width: 5.7vw;
+    height: 9.5vw;
+    background-image: url(assets/egg_time1.svg);
+    background-size: cover;
+
+    clip: rect(0, 5vw, 2vw, 0);
+}
+
+.timer {
+    animation-name: timer_kf;
+    animation-duration: 30s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes timer_kf {
+    0% {
+        clip-path: inset(0 0 0 0);
+    }
+
+    100% {
+        clip-path: inset(100% 0 0 0);
+    }
+} Simpel timer end
+*/
+
+
+#egg_time1_container {
+    position: absolute;
+    background-image: url(assets/egg_timer_bg.svg);
+    background-size: cover;
+    top: 5vw;
+    left: 1.9vw;
+}
+
+#egg_time1_sprite {
+    width: 5.5vw;
+    height: 8.8vw;
+    background-image: url(assets/egg_timer_all.svg);
+    background-size: 1000% 99.8%;
+    background-position: -1.8vw;
+
+}
+
+.timer {
+    animation-name: timer_kf;
+    animation-duration: 30s;
+    animation-timing-function: steps(10);
+    animation-fill-mode: both;
+}
+
+@keyframes timer_kf {
+    100% {
+        background-position: 107%;
+    }
+}
+
+/* egg_time1 end */
+/* time_board end */
+/* game_ui end */
+
+
+
+/* skaerme start */
+#start {
+    background-color: green;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /*display: none;*/
+    background-image: url(assets/titlescreen.svg);
+    background-size: cover;
+}
+
+#game_over {
+    background-color: lightblue;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /*display: none;*/
+    background-image: url(assets/game_over_screen.svg);
+    background-size: cover;
+}
+
+#level_complete {
+    background-color: lightcoral;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /*display: none;*/
+    background-image: url(assets/level_complete_screen.svg);
+    background-size: cover;
+}
+
+/* skaerme end */
+/* screen and game end */
+
+
+/* animations start */
+
+/* zoom_out start */
+.zoom_out {
+    animation-name: zoom_out_kf;
+    animation-duration: 3s;
+    /* animation-iteration-count: infinite;*/
+    animation-fill-mode: both;
+}
+
+@keyframes zoom_out_kf {
+    0% {
+        transform: scale(100%);
+    }
+
+    100% {
+        transform: scale(0);
+    }
+}
+
+/* zoom_out end */
+/* rotation start */
+.rotation {
+    animation-name: rotation_kf;
+    animation-duration: 1.5s;
+    /* animation-iteration-count: infinite;*/
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+}
+
+@keyframes rotation_kf {
+    0% {
+        transform: rotate(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* rotation end */
+
+/* fade_out info start */
+.fade_out_info {
+    animation-name: fade_out_info_kf;
+    animation-duration: 15s;
+    /* animation-iteration-count: infinite;*/
+    animation-fill-mode: both;
+}
+
+@keyframes fade_out_info_kf {
+
+    0% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+
+}
+
+/* fade_out info end */
+/* fade_out start */
+.fade_out {
+    animation-name: fade_out_kf;
+    animation-duration: 1s;
+    /* animation-iteration-count: infinite;*/
+    animation-fill-mode: both;
+}
+
+@keyframes fade_out_kf {
+
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+
+}
+
+/* fade_out end */
+/* falling start */
+.falling {
+    transform-origin: 0% 0%;
+    animation-name: falling_kf;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+}
+
+@keyframes falling_kf {
+    0% {
+        transform: translateY(-10vw);
+    }
+
+    100% {
+        transform: translateY(71.25vw);
+    }
+}
+
+/* falling end */
+/* pulse start */
+.pulse {
+    animation-name: pulse_kf;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+}
+
+@keyframes pulse_kf {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.05);
+    }
+}
+
+/* pulse end */
+
+.pause {
+    animation-play-state: paused;
+}
+
+/* animations end */
+
+
+/* game postions start */
+
+.pos1 {
+    top: -10vw;
+    left: 10vw;
+}
+
+.pos2 {
+    top: -10vw;
+    left: 20vw;
+}
+
+.pos3 {
+    top: -10vw;
+    left: 30vw;
+}
+
+.pos4 {
+    top: -10vw;
+    left: 40vw;
+}
+
+.pos5 {
+    top: -10vw;
+    left: 50vw;
+}
+
+.pos6 {
+    top: -10vw;
+    left: 60vw;
+}
+
+/* game postions end */
+
+/* screens start */
+
+.hide {
+    display: none;
+}
+
+/* screens end */
+
+
+
+/* delay start */
+
+.delay1 {
+    animation-delay: 1s;
+}
+
+.delay2 {
+    animation-delay: 2s;
+}
+
+.delay3 {
+    animation-delay: 3s;
+}
+
+.delay4 {
+    animation-delay: 4s;
+}
+
+.delay5 {
+    animation-delay: 5s;
+}
+
+.delay6 {
+    animation-delay: 6s;
+}
+
+/* delay end */
+/* speed start */
+
+.speed1 {
+    animation-duration: 8s;
+}
+
+.speed2 {
+    animation-duration: 6s;
+}
+
+.speed3 {
+    animation-duration: 4s;
+}
+
+.speed4 {
+    animation-duration: 3s;
+}
+
+/* speed end */
+
+/* mute knap start */
+
+#sound_switch {
+    position: absolute;
+    background-image: url(assets/lyd_knap.svg);
+    height: 17vw;
+    width: 6.5vw;
+    background-size: 200% 100%;
+    left: 3vw;
+    top: 4.6vw;
+    z-index: 3;
+}
+
+.unmute {
+    background-position: -100%;
+}
+
+/* mute knap end */
+/****************** Spillet slut ******************/
+
+
+
+
+
+
+
+
+
+
+
+/**/

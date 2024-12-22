@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>Save The Turtles - The Game</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://use.typekit.net/ffj5sph.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <h1><a href="index.html">Save The Turtles</a></h1>
+            <div class="icon"><a href="index.html"><img src="logo/s_hoved_logo.png" alt="skildpadde_hoved_logo"></a></div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="spil.html#screen">Spillet</a></li>
+                <li><a href="ide.html">Idé</a></li>
+                <li><a href="assets.html">Assetliste</a></li>
+                <li><a href="doku.html">Dokumentation</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div id="screen">
+            <div id="game">
+                <div id="game_background">
+
+                </div>
+
+                <div id="game_elements">
+                    <div id="skildpadde_container1">
+                        <div id="skildpadde_sprite1"></div>
+                    </div>
+                    <div id="odder_container1">
+                        <div id="odder_sprite1">
+                        </div>
+                    </div>
+                    <div id="egg_container1">
+                        <div id="egg_sprite1">
+                        </div>
+                    </div>
+
+                    <div id="skildpadde_container2">
+                        <div id="skildpadde_sprite2"></div>
+                    </div>
+                    <div id="odder_container2">
+                        <div id="odder_sprite2">
+                        </div>
+                    </div>
+                    <div id="egg_container2">
+                        <div id="egg_sprite2">
+                        </div>
+                    </div>
+
+                    <div id="skildpadde_container3">
+                        <div id="skildpadde_sprite3"></div>
+                    </div>
+                    <div id="odder_container3">
+                        <div id="odder_sprite3">
+                        </div>
+                    </div>
+
+                    <div id="skildpadde_container4">
+                        <div id="skildpadde_sprite4"></div>
+                    </div>
+                    <div id="odder_container4">
+                        <div id="odder_sprite4">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="foreground">
+
+                </div>
+
+                <div id="game_ui">
+                    <div id="button_settings_container" class="pulse">
+                        <div id="button_settings_sprite">
+                        </div>
+                    </div>
+
+                    <div id="score_board_container">
+                        <div id="score_board_sprite">
+                            <div id="score_board_points"></div>
+                        </div>
+                    </div>
+
+                    <div id="energy_board_container">
+                        <div id="energy_board_sprite">
+                        </div>
+
+                        <div id="liv">
+                            <div id="liv1">
+                                <img src="assets/liv.svg" alt="liv">
+                            </div>
+                            <div id="liv2">
+                                <img src="assets/liv.svg" alt="liv">
+                            </div>
+                            <div id="liv3">
+                                <img src="assets/liv.svg" alt="liv">
+                            </div>
+                            <div id="liv4">
+                                <img src="assets/liv.svg" alt="liv">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="time_board_container">
+                        <div id="time_board_sprite">
+
+                            <div id="egg_time1_container">
+                                <div id="egg_time1_sprite"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div id="start">
+                <div id="start_container1" class="pulse">
+                    <div id="start_sprite1"></div>
+                </div>
+
+                <div id="button_settings_container" class="pulse">
+                    <div id="button_settings_sprite">
+                    </div>
+                </div>
+            </div>
+
+            <div id="infoscreen">
+                <div id="luk_knap"></div>
+            </div>
+
+            <div id="game_over">
+                <div id="genstart_container1" class="pulse">
+                    <div id="genstart_sprite1">
+                    </div>
+                </div>
+
+                <div id="button_settings_container" class="pulse">
+                    <div id="button_settings_sprite">
+                    </div>
+                </div>
+                <div id="points_board">
+                    <div id="game_over_points">
+
+                    </div>
+                </div>
+            </div>
+
+            <div id="level_complete">
+                <div id="genstart_container2" class="pulse">
+                    <div id="genstart_sprite2">
+                    </div>
+                </div>
+
+                <div id="button_settings_container" class="pulse">
+                    <div id="button_settings_sprite">
+                    </div>
+                </div>
+
+                <div id="points_board">
+                    <div id="level_complete_points">
+
+                    </div>
+                </div>
+            </div>
+
+            <div id="sound_switch"></div>
+
+            <div id="sounds">
+                <audio src="sounds/bang.mp3" id="sound_bang"></audio>
+                <audio src="sounds/horn.mp3" id="sound_horn"></audio>
+                <audio src="sounds/klokke.mp3" id="sound_klokke"></audio>
+                <audio src="sounds/vandfald.mp3" id="sound_vandfald"></audio>
+                <audio src="sounds/Feels_Patrick_Patrikios.mp3" id="music_feels"></audio>
+
+                <audio src="sounds/vinder_taber_lyde/buu_lyde.mp3" id="sound_buu"></audio>
+                <audio src="sounds/vinder_taber_lyde/klappe_juhu_lyde.mp3" id="sound_klappe_juhu"></audio>
+                <audio src="sounds/vinder_taber_lyde/taber_lyd.mp3" id="sound_taber"></audio>
+                <audio src="sounds/vinder_taber_lyde/vinder_lyd.mp3" id="sound_vinder"></audio>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+
+    <footer>
+        <p>Skoleprojekt - Tema 04, Animation<br>
+            KEA - Multi&shy;medie&shy;designer 2021-2023<br>
+            Spillet & hjemmesiden er udviklet, produceret & designet af: Magnus Nielsen, sidst ændret: 06-05-2021, kl 22:09</p>
+    </footer>
+</body>
+
+</html>
